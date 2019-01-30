@@ -58,10 +58,23 @@ a:hover{
     position: absolute;
     top: 5vh;
     margin-bottom: 5vh;
+    left: 25vw;
+    right: 25vw;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .main{
+    padding: 4vh 3vw 4vh 3vw;
+
+    position: absolute;
+    top: 5vh;
+    margin-bottom: 5vh;
     left: 20vw;
     right: 20vw;
   }
 }
+
 
 @media only screen and (max-width: 1000px) {
   .icon{
@@ -96,5 +109,26 @@ a:hover{
     margin-bottom: 5vh;
     left: 10vw;
     right: 10vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .icon{
+    display: none;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  .main{
+    padding: 4vh 5vw 4vh 5vw;
+    border-radius: 0;
+
+    position: absolute;
+    top: 0;
+    margin-bottom: 0;
+    left: 0;
+    right: 0;
   }
 }
