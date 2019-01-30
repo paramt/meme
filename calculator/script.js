@@ -19,21 +19,21 @@ function predictOutcome(){
 }
 
 
-/**
+
 
 function calculateBreakEvenPoint(){
-  var upvotes = parseInt(document.getElementById('upvotes2').value);
-  var profit = calculate(upvotes, upvotes);
+  var upvotes = document.getElementById("upvotes2").value;
 
-  while(profit<-10 || profit>10){
-    var newUpvotes = (Math.random() * upvotes);
-    console.log(newUpvotes);
-    profit = calculate(newUpvotes, upvotes)*1000
+  var a = upvotes;
+  var b = upvotes;
+  var factor = calculate(a, b);
+
+  while(factor<1){
+    factor = calculate(a, b);
+    a++;
   }
 
-  var result = newUpvotes;
+  var result = a - 1;
 
   document.getElementById('result2').value = result;
 }
-
-*/
