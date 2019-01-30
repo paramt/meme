@@ -24,16 +24,36 @@ function predictOutcome(){
 function calculateBreakEvenPoint(){
   var upvotes = document.getElementById("upvotes2").value;
 
-  var a = upvotes;
-  var b = upvotes;
+  var a = parseInt(upvotes);
+  var b = parseInt(upvotes);
   var factor = calculate(a, b);
 
-  while(factor<1){
-    factor = calculate(a, b);
-    a++;
+
+  if(b<250){
+    // If number is small enough, make calculations accurate to 1 decimal place
+    while(factor<1){
+      factor = calculate(a, b);
+      console.log("At " + a + " upvotes your investment return factor will be " + factor);
+      a=a*10;
+      a++;
+      a=a/10;
+    }
+
+    var result = a;
+
+    document.getElementById('result2').value = result;
+
+  } else {
+    // If number is bigger, round calculations to nearest whole number
+    while(factor<1){
+      factor = calculate(a, b);
+      console.log("At " + a + " upvotes your investment return factor will be " + factor);
+      a++;
+    }
+
+    var result = a;
+
+    document.getElementById('result2').value = result;
   }
 
-  var result = a - 1;
-
-  document.getElementById('result2').value = result;
 }
