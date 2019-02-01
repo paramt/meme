@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="../../css/style.css">
   </head>
 
   <body>
-    <h1>Break-Even Calculator</h1>
-    <p>The post currently has <input id="upvotes2" type="number"> upvotes.</p> <br> <input onclick="calculateBreakEvenPoint();" type="submit" value="Calculate">
-    <br><br> <input id="result2" disabled value="break even point">
+    <div class="main centered">
+      <h1>Break-Even Calculator</h1><br><br>
+      <p>Value upon investment: <input id="upvotes" type="number"></p> <br> <input onclick="calculateBreakEvenPoint()" type="submit" value="Calculate">
+    </div>
+
+    <div class="main result" id="output">
+      <input id="result" disabled>
+    </div>
+
+    <div class="centered"><a href="/" class="back">Back</a></div>
 
     <script src="../script.js"></script>
     <script src="../bot-algorithm.js"></script>

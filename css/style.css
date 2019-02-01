@@ -2,6 +2,9 @@
 
 body{
   background-color: #383838;
+  color: #3f3f3f;
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
 }
 
 .main{
@@ -9,16 +12,20 @@ body{
   border-radius: 15px;
   padding: 4vh 2vw 4vh 2vw;
 
-  position: absolute;
-  top: 5vh;
+  position: static;
+  margin-top: 5vh;
   margin-bottom: 5vh;
-  left: 33vw;
-  right: 33vw;
+  margin-left: 33vw;
+  margin-right: 33vw;
+}
+
+.centered{
+  text-align: center;
 }
 
 ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* make scrollbar invisible */
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* make scrollbar invisible */
 }
 
 .icon{
@@ -27,14 +34,42 @@ body{
   vertical-align: baseline;
 }
 
-h1, h3, p{
-  color: #3f3f3f;
-  font-family: 'Nunito Sans', sans-serif;
-}
-
 h1{
   display: inline;
   margin-left: 10px;
+}
+
+input[type="submit"]{
+  border: none;
+  outline: none;
+  background-color: #383838;
+  color: white;
+  padding: 2%;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 80%;
+  font-size: 1.1em;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+}
+
+input[type="submit"]:hover{
+  background-color: #757575;
+}
+
+.result{
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.result input{
+  border: none;
+  background-color: inherit;
+  text-align: center;
+  width:100%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.5em;
+  cursor: text;
 }
 
 hr{
@@ -51,11 +86,18 @@ a:hover{
   text-decoration: underline;
 }
 
+a.back{
+  color: #dddddd;
+  position: absolute;
+  bottom: 3vh;
+  font-size: 1.2em;
+}
+
 @media only screen and (max-width: 1600px) {
   .main{
     padding: 4vh 3vw 4vh 3vw;
 
-    position: absolute;
+    position: static;
     top: 5vh;
     margin-bottom: 5vh;
     left: 25vw;
@@ -63,15 +105,27 @@ a:hover{
   }
 }
 
+@media only screen and (max-width: 1400px) {
+  .main{
+    padding: 4vh 3vw 4vh 3vw;
+
+    position: static;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 25vw;
+    margin-right: 25vw;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .main{
     padding: 4vh 3vw 4vh 3vw;
 
-    position: absolute;
-    top: 5vh;
+    position: static;
+    margin-top: 5vh;
     margin-bottom: 5vh;
-    left: 20vw;
-    right: 20vw;
+    margin-left: 20vw;
+    margin-right: 20vw;
   }
 }
 
@@ -84,11 +138,11 @@ a:hover{
   .main{
     padding: 4vh 3vw 4vh 3vw;
 
-    position: absolute;
-    top: 5vh;
+    position: static;
+    margin-top: 5vh;
     margin-bottom: 5vh;
-    left: 15vw;
-    right: 15vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
   }
 }
 
@@ -104,11 +158,11 @@ a:hover{
   .main{
     padding: 4vh 5vw 4vh 5vw;
 
-    position: absolute;
-    top: 5vh;
+    position: static;
+    margin-top: 5vh;
     margin-bottom: 5vh;
-    left: 10vw;
-    right: 10vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
   }
 }
 
@@ -125,10 +179,10 @@ a:hover{
     padding: 4vh 5vw 4vh 5vw;
     border-radius: 0;
 
-    position: absolute;
-    top: 0;
+    position: static;
+    margin-top: 0;
     margin-bottom: 0;
-    left: 0;
-    right: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 }

@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="../../css/style.css">
   </head>
 
   <body>
-    <h1>Investment Return Calculator</h1>
-    <p>The post currently has <input id="upvotes" type="number"> upvotes. I predict it will have <input id="future_upvotes" type="number"> upvotes in 4 hours. I have invested <input id="investment" type="number"> MemeCoins.</p> <br> <input onclick="predictOutcome();" type="submit" value="Calculate">
-    <br><br> <input id="result" disabled value="profit">
+    <div class="main centered">
+      <h1>Investment Return Calculator</h1><br><br>
+      <input type="radio" name="format" onchange="changeFormat()" value="percent" id="percent" checked> Percent
+      <input type="radio" name="format" onchange="changeFormat()" value="amount" id="amount"> Amount
 
+      <p>Value at investment: <input id="upvotes" type="number"></p>
+      <p>Value upon maturity: <input id="future_upvotes" type="number"></p>
+      <p id="amount-display" style="display:none">Investment amount: <input id="investment" type="number"></p>
+
+      <br><input onclick="calculateInvestmentReturn();" type="submit" value="Calculate">
+    </div>
+
+    <div class="main result centered" id="output">
+      <input id="result" disabled><br><br><input id="max" disabled>
+    </div>
+
+    <div class="centered"><a href="/" class="back">Back</a></div>
+    
     <script src="../script.js"></script>
     <script src="../bot-algorithm.js"></script>
   </body>
