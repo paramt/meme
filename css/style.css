@@ -62,7 +62,7 @@ input[type="submit"]:hover{
   transition: opacity 0.25s;
 }
 
-.result input{
+.result p{
   border: none;
   background-color: inherit;
   text-align: center;
@@ -177,12 +177,11 @@ a.back{
 
   .main{
     padding: 4vh 5vw 4vh 5vw;
-    border-radius: 0;
 
     position: static;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
   }
 }
