@@ -38,7 +38,7 @@ function sigmoid(x, maxvalue, midpoint, steepness){
 }
 
 function sigmoid_max(oldNumber){
-  return 1.2 + 1.4 / ((oldNumber / 10) + 1);
+  return 1.2 + 0.6 / ((oldNumber / 10) + 1);
 }
 
 function sigmoid_midpoint(oldNumber){
@@ -48,7 +48,7 @@ function sigmoid_midpoint(oldNumber){
 }
 
 function sigmoid_steepness(oldNumber){
-  return 0.04 / ((oldNumber / 100) + 1);
+  return 0.06 / ((oldNumber / 100) + 1);
 }
 
 function linear_interpolate(x, x_0, x_1, y_0, y_1){

@@ -37,17 +37,17 @@ function calculateInvestmentReturn(){
   }
 
   if(error == 0){
-    document.getElementById('result').value = "Return: " + investmentReturn;
-    document.getElementById('max').value = "Maximum: +" + upperLimit + " at " + Math.ceil(upperLimitAmount) + " upvotes";
+    document.getElementById('result').innerHTML = "Return: " + investmentReturn;
+    document.getElementById('max').innerHTML = "Upper Limit: +" + upperLimit + " at " + Math.ceil(upperLimitAmount) + " upvotes";
     document.getElementById('output').style.opacity = "1";
 
   } else if(error == 1){
-    document.getElementById('result').value = "Incorrect input";
-    document.getElementById('max').value = "Fill out each field first"
+    document.getElementById('result').innerHTML = "Incorrect input";
+    document.getElementById('max').innerHTML = "Fill out each field first"
     document.getElementById('output').style.opacity = "1";
   } else if(error == 2){
-    document.getElementById('result').value = "Incorrect input";
-    document.getElementById('max').value = "Investment must be greater than 0";
+    document.getElementById('result').innerHTML = "Incorrect input";
+    document.getElementById('max').innerHTML = "Investment must be greater than 0";
     document.getElementById('output').style.opacity = "1";
   }
 
@@ -136,14 +136,29 @@ function calculatePoint(factor, oldNumber){
   var y = oldNumber;
   var z = factor;
 
+  if(factor !== 1){
+    if(factor > 1.2){
+      var z = 0.7*factor;
+    }
+
+    if(factor > 1.5){
+      var z = 0.8*factor;
+    }
+
+    if(factor > 1.7){
+      var z = 0.95*factor;
+    }
+  }
+
   // solves x assuming z = 1 (break even point)
   // var x = -((Math.log((14/(y+10))+0.2)*(y+100))/4) + ((2549/2500)*y) + 10;
 
-  var x = (y*(625*Math.log(((-(5*y*z))/(5*y*z+50*z-6*y-130)) - (50*z)/(5*y*z+50*z-6*y-130))+2549) + 62500 * Math.log(-(5*y*z)/(5*y*z+50*z-6*y-130) - (50*z)/(5*y*z+50*z-6*y-130)) + 25000)/(2500);
+  var x = ((-125000*Math.log((-(5*y*z+50*z-6*y-90)^(1/3))/(5^(1/3)*(y+10)^(1/3)*z^(1/3)))) + y*(2549-1250*Math.log((-(5*y*z+50*z-6*y-90)^(1/3))/(5^(1/3)*(y+10)^(1/3)*z^(1/3))))+25000)/2500;
 
-  while(isNaN(x)){
+  while(isNaN(x) || !isFinite(x)){
     z = z-0.001;
-    x = (y*(625*Math.log(((-(5*y*z))/(5*y*z+50*z-6*y-130)) - (50*z)/(5*y*z+50*z-6*y-130))+2549) + 62500 * Math.log(-(5*y*z)/(5*y*z+50*z-6*y-130) - (50*z)/(5*y*z+50*z-6*y-130)) + 25000)/(2500);
+    console.log(z);
+    x = ((-125000*Math.log((-(5*y*z+50*z-6*y-90)^(1/3))/(5^(1/3)*(y+10)^(1/3)*z^(1/3)))) + y*(2549-1250*Math.log((-(5*y*z+50*z-6*y-90)^(1/3))/(5^(1/3)*(y+10)^(1/3)*z^(1/3))))+25000)/2500;
   }
 
   return x;
