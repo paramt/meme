@@ -138,28 +138,28 @@ function calculatePoint(factor, oldNumber){
 
   if(factor !== 1){
     if(factor > 1.2){
-      var z = 0.7*factor;
+      z = 0.7*factor;
     }
 
     if(factor > 1.5){
-      var z = 0.8*factor;
+      z = 0.8*factor;
     }
 
     if(factor > 1.7){
-      var z = 0.95*factor;
+      z = 0.95*factor;
     }
   }
 
-  // solves x assuming z = 1 (break even point)
-  // var x = -((Math.log((14/(y+10))+0.2)*(y+100))/4) + ((2549/2500)*y) + 10;
-
-  var x = ((-125000*Math.log((-(5*y*z+50*z-6*y-90)^(1/3))/(5^(1/3)*(y+10)^(1/3)*z^(1/3)))) + y*(2549-1250*Math.log((-(5*y*z+50*z-6*y-90)^(1/3))/(5^(1/3)*(y+10)^(1/3)*z^(1/3))))+25000)/2500;
-
-  while(isNaN(x) || !isFinite(x)){
-    z = z-0.001;
-    console.log(z);
-    x = ((-125000*Math.log((-(5*y*z+50*z-6*y-90)^(1/3))/(5^(1/3)*(y+10)^(1/3)*z^(1/3)))) + y*(2549-1250*Math.log((-(5*y*z+50*z-6*y-90)^(1/3))/(5^(1/3)*(y+10)^(1/3)*z^(1/3))))+25000)/2500;
-  }
+  var x = goalSeek({
+    Func: calculate,
+    aFuncParams: [null, y],
+    oFuncArgTarget: {
+      Position: 0
+    },
+    Goal: z,
+    Tol: 0.001,
+    maxIter: 1000
+  })
 
   return x;
 }
