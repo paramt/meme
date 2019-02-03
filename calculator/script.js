@@ -62,11 +62,11 @@ function calculateBreakEvenPoint(){
   }
 
   if(upvotes>0 && upvotes!==""){
-    output.value = "Break even at " + Math.round(calculatePoint(1, upvotes)*100)/100 + " upvotes";
+    output.innerHTML = "Break even at " + Math.round(calculatePoint(1, upvotes)*100)/100 + " upvotes";
   } else if(upvotes===""){
-    output.value = "Enter a number";
+    output.innerHTML = "Enter a number";
   } else {
-    output.value = "Enter a number greater than 0";
+    output.innerHTML = "Enter a number greater than 0";
   }
 
 
