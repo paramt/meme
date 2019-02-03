@@ -1,3 +1,6 @@
+// prevent status image from being dragged
+document.getElementById('status').ondragstart = function() { return false; };
+
 function calculateInvestmentReturn(){
   var oldUpvotes = document.getElementById('upvotes').value;
   var newUpvotes = document.getElementById('future_upvotes').value;

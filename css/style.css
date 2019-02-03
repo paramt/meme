@@ -34,6 +34,16 @@ body{
   vertical-align: baseline;
 }
 
+.status{
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  left: 0px;
+  right: 0px;
+  bottom: 3vh;
+  width: 10vw;
+}
+
 h1{
   display: inline;
   margin-left: 10px;
@@ -88,8 +98,6 @@ a:hover{
 
 a.back{
   color: #dddddd;
-  position: absolute;
-  bottom: 3vh;
   font-size: 1.2em;
 }
 
@@ -144,6 +152,10 @@ a.back{
     margin-left: 15vw;
     margin-right: 15vw;
   }
+
+  .status{
+    width: 15vw;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -164,6 +176,10 @@ a.back{
     margin-left: 10vw;
     margin-right: 10vw;
   }
+
+  .status{
+    width: 20vw;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -183,5 +199,9 @@ a.back{
     margin-bottom: 2vh;
     margin-left: 2vw;
     margin-right: 2vw;
+  }
+
+  .status{
+    display: none;
   }
 }
