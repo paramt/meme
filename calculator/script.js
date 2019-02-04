@@ -60,16 +60,14 @@ function calculateBreakEvenPoint(){
   var upvotes = document.getElementById('upvotes').value;
   var output = document.getElementById('result');
 
-  if(upvotes < 0){
-    upvotes = 0;
-  }
-
-  if(upvotes>0 && upvotes!==""){
+  if(upvotes>0 && upvotes!=="" && upvotes<200000){
     output.innerHTML = "Break even at " + Math.round(calculatePoint(1, upvotes)*100)/100 + " upvotes";
   } else if(upvotes===""){
     output.innerHTML = "Enter a number";
-  } else {
+  } else if(upvotes<1){
     output.innerHTML = "Enter a number greater than 0";
+  } else if(upvotes>=200000){
+    output.innerHTML = "Enter a number smaller than 200,000";
   }
 
 
@@ -136,33 +134,50 @@ function displayInAmount(){
 }
 
 function calculatePoint(factor, oldNumber){
-  var y = oldNumber;
+  var y = parseInt(oldNumber);
   var z = factor;
+  var TOL;
+
+  var x = y;
+  var newFactor = calculate(x, y);
 
   if(factor !== 1){
-    if(factor > 1.2){
-      z = 0.7*factor;
+    z = 0.999*factor;
+
+    if(y>50000){
+      TOL = 50;
+    } else if(y>2000){
+      TOL = 10;
+    } else {
+      TOL = 1;
     }
 
-    if(factor > 1.5){
-      z = 0.8*factor;
+    if(newFactor > z){
+      while(newFactor > z){
+        x = x - TOL;
+        newFactor = calculate(x, y);
+      }
+    } else {
+      while(newFactor < z){
+        x = x + TOL;
+        newFactor = calculate(x, y);
+      }
+    }
+  } else {
+    if(y>50000){
+      TOL = 1;
+    } else if(y>2000){
+      TOL = 0.1;
+    } else {
+      TOL = 0.01;
     }
 
-    if(factor > 1.7){
-      z = 0.95*factor;
+    while(newFactor < z){
+      x = x + TOL;
+      newFactor = calculate(x, y);
     }
   }
 
-  var x = goalSeek({
-    Func: calculate,
-    aFuncParams: [null, y],
-    oFuncArgTarget: {
-      Position: 0
-    },
-    Goal: z,
-    Tol: 0.001,
-    maxIter: 1000
-  })
 
   return x;
 }
