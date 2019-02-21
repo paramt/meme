@@ -1,4 +1,4 @@
-function calculate(newNumber, oldNumber){
+function calculate(newNumber, oldNumber, net_worth){
   // Treat anything below 0 upvotes as 0 upvotes
   if(oldNumber < 0){
     oldNumber = 0;
@@ -28,7 +28,9 @@ function calculate(newNumber, oldNumber){
   // Calculate return
   var factor = sigmoid(delta, sig_max, sig_mp, sig_stp);
 
-  return factor;
+  factor = factor - 1;
+  factor = factor * net_worth_coefficient(net_worth);
+  return factor + 1
 }
 
 function sigmoid(x, maxvalue, midpoint, steepness){
@@ -52,8 +54,12 @@ function sigmoid_steepness(oldNumber){
 }
 
 function linear_interpolate(x, x_0, x_1, y_0, y_1){
-  var m = (y_1 - y_0) / (x_1 - x_0);
+  var m = (y_1 - y_0) / x_1 - x_0;
   var c = y_0;
   var y = (m * x) + c;
   return y;
+}
+
+function net_worth_coefficient(net_worth){
+  return Math.pow(net_worth, -0.155) * 6
 }
