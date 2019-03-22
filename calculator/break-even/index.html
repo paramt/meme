@@ -31,5 +31,12 @@
 
     <script src="../script.js"></script>
     <script src="../bot-algorithm.js"></script>
+
+    <script>
+    window.onload = function(){
+      document.getElementById("upvotes").value = window.location.href.split("?")[1];
+      calculateBreakEvenPoint();
+    }
+    </script>
   </body>
 </html>
