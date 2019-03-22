@@ -34,8 +34,11 @@
 
     <script>
     window.onload = function(){
-      document.getElementById("upvotes").value = window.location.href.split("?")[1];
-      calculateBreakEvenPoint();
+      var upvotes = window.location.href.split("?")[1]
+      if(/-?(\d+|\d+\.\d+|\.\d+)([eE][-+]?\d+)?/.test(upvotes)){
+        document.getElementById("upvotes").value = upvotes;
+        calculateBreakEvenPoint();
+      }
     }
     </script>
   </body>
