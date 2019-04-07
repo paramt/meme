@@ -7,11 +7,48 @@ body{
   margin: 0;
 }
 
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box{
+  background-color: #dddddd;
+  border-radius: 15px;
+  padding: 8vh 2vw 8vh 2vw;
+  width: 30vw;
+  text-align: center;
+  margin: 2vh 1vw 2vh 1vw;
+}
+
+.box:hover{
+  background-color: #c1c1c1;
+  cursor: pointer;
+}
+
+.box p{
+  font-size: 1.2em;
+}
+
+.bottom{
+  border-radius: 15px 15px 0 0;
+  padding: 4vh 2vw 4vh 2vw;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .main{
   background-color: #dddddd;
   border-radius: 15px;
   padding: 4vh 2vw 4vh 2vw;
-
   position: static;
   margin-top: 5vh;
   margin-bottom: 5vh;
@@ -182,6 +219,20 @@ a.back{
   }
 }
 
+@media only screen and (max-width: 700px) {
+  .container{
+    flex-direction: column;
+  }
+
+  .box{
+    width: 50vw;
+  }
+
+  .bottom{
+    position: static;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .icon{
     display: none;
@@ -203,5 +254,11 @@ a.back{
 
   .status{
     width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .box{
+    width: 80vw;
   }
 }
