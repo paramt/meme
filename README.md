@@ -1,4 +1,7 @@
 # Meme Economy Market Evaluator <img height=44 src=https://b.thumbs.redditmedia.com/aRUO-zIbXgMTDVJOcxKjY8P6rGkakMdyVXn4k1VN-Mk.png align=left>
+
+![Update Status](https://img.shields.io/endpoint.svg?url=https://thakkaha.dev.fast.sheridanc.on.ca/pme/meme/status/&style=for-the-badge)
+
 **MEME**, (or MemeEconomy Market Evaluator) offers a set of tools to analyze the market at [r/MemeEconomy](https://www.reddit.com/r/MemeEconomy). The project is currently in **beta** and frequent changes should be expected.
 
 ## What is MemeEconomy?
@@ -18,10 +21,3 @@ MemeEconomy is a large community with many [developers](https://github.com/MemeI
 [Subreddit](https://www.reddit.com/r/MemeEconomy) |
 [Website](https://memes.market) |
 [Github](https://github.com/MemeInvestor/memeinvestor_bot)
-
-## Update Status
-
-#### What's This?
-MemeEconomy's bot gets updated all the time. This means that MemeEconomy might have updated the formula they use to calculate investment return, making this code inaccurate. Although this code is updated regularly, there is a slight chance that the code may be behind. If that's the case, then the status below will indicate that the code is **NOT UPDATED**. The code will usually be updated within 12 hours. Currently, the code is 
-
-<img width="20%" src="https://thakkaha.dev.fast.sheridanc.on.ca/pme/meme/status/light/">
