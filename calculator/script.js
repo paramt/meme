@@ -10,9 +10,6 @@ function calculateInvestmentReturn(){
 
   if(oldUpvotes !== "" && newUpvotes !== "" && netWorth !== "" && netWorth > 0){
     var investmentReturn = (Math.round((factor-1)*100*100))/100;
-    var upperLimit = (Math.round(sigmoid_max(oldUpvotes)*10000) - 10000)/100 + "%";
-    var upperLimitAmount = calculatePoint(sigmoid_max(oldUpvotes), oldUpvotes, netWorth);
-
 
     if(investmentReturn > 0){
       investmentReturn = "+" + investmentReturn;
@@ -25,7 +22,6 @@ function calculateInvestmentReturn(){
 
   if(error == 0){
     document.getElementById('result').innerHTML = "Return: " + investmentReturn;
-    //document.getElementById('max').innerHTML = "Upper Limit: +" + upperLimit + " at " + Math.ceil(upperLimitAmount) + " upvotes";
     document.getElementById('max').innerHTML = ""
     document.getElementById('output').style.opacity = "1";
 
