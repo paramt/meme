@@ -61,22 +61,16 @@ body{
 }
 
 ::-webkit-scrollbar {
-  width: 0px;  /* remove scrollbar space */
+  width: 0;  /* remove scrollbar space */
   background: transparent;  /* make scrollbar invisible */
-}
-
-.icon{
-  height: 44px;
-  display: inline;
-  vertical-align: baseline;
 }
 
 .status{
   position: absolute;
   margin-right: auto;
   margin-left: auto;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   bottom: 3vh;
   width: 10vw;
 }
@@ -140,11 +134,9 @@ a.back{
 
 @media only screen and (max-width: 1600px) {
   .main{
-    padding: 4vh 3vw 4vh 3vw;
-
-    position: static;
-    top: 5vh;
     margin-bottom: 5vh;
+    padding: 4vh 3vw;
+    top: 5vh;
     left: 25vw;
     right: 25vw;
   }
@@ -152,25 +144,13 @@ a.back{
 
 @media only screen and (max-width: 1400px) {
   .main{
-    padding: 4vh 3vw 4vh 3vw;
-
-    position: static;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    margin-left: 25vw;
-    margin-right: 25vw;
+    margin: 5vh 25vw;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .main{
-    padding: 4vh 3vw 4vh 3vw;
-
-    position: static;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    margin-left: 20vw;
-    margin-right: 20vw;
+    margin: 5vh 20vw;
   }
 }
 
@@ -181,13 +161,7 @@ a.back{
   }
 
   .main{
-    padding: 4vh 3vw 4vh 3vw;
-
-    position: static;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    margin-left: 15vw;
-    margin-right: 15vw;
+    margin: 5vh 15vw;
   }
 
   .status{
@@ -205,13 +179,8 @@ a.back{
   }
 
   .main{
-    padding: 4vh 5vw 4vh 5vw;
-
-    position: static;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin: 5vh 10vw;
+    padding: 4vh 5vw;
   }
 
   .status{
@@ -243,13 +212,7 @@ a.back{
   }
 
   .main{
-    padding: 4vh 5vw 4vh 5vw;
-
-    position: static;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    margin: 2vh 2vw;
   }
 
   .status{
