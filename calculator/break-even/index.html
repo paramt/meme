@@ -34,8 +34,10 @@
 
     <script>
     window.onload = function(){
-      var upvotes = window.location.href.split("?")[1]
-      if(/-?(\d+|\d+\.\d+|\.\d+)([eE][-+]?\d+)?/.test(upvotes)){
+      var url = new URL(location.href);
+      var upvotes = parseInt(url.searchParams.get("upvotes"));
+
+      if(upvotes){
         document.getElementById("upvotes").value = upvotes;
         calculateBreakEvenPoint();
       }
