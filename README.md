@@ -1,6 +1,7 @@
 # Meme Economy Market Evaluator <img height=44 src=https://b.thumbs.redditmedia.com/aRUO-zIbXgMTDVJOcxKjY8P6rGkakMdyVXn4k1VN-Mk.png align=left>
 
 [![Update Status](https://img.shields.io/endpoint.svg?url=https://thakkaha.dev.fast.sheridanc.on.ca/pme/meme/status/&style=for-the-badge)](https://github.com/MemeInvestor/memeinvestor_bot/blob/master/src/formula.py)
+[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/paramt/meme/master.svg?style=for-the-badge)](https://github.com/paramt/meme/commits/master)
 
 **MEME**, (or MemeEconomy Market Evaluator) offers a set of tools to analyze the market at [r/MemeEconomy](https://www.reddit.com/r/MemeEconomy). This project is no longer in active development. If anyone is willing to maintain this project, send out an email to contact@param.me.
 
