@@ -33,23 +33,8 @@
 
     <div class="centered"><a href="../../" class="back">Back</a><img class="status" src="https://thakkaha.dev.fast.sheridanc.on.ca/pme/meme/status/dark" id="status"></div>
 
-    <script src="../script.js"></script>
+    <script src="script.js"></script>
+    <script src="../calculate.js"></script>
     <script src="../bot-algorithm.js"></script>
-
-    <script>
-      window.onload = function(){
-        var url = new URL(location.href);
-        var upvotes = parseInt(url.searchParams.get("old"));
-        var futureUpvotes = parseInt(url.searchParams.get("new"));
-        var netWorth = parseInt(url.searchParams.get("balance"));
-
-        if(upvotes && futureUpvotes && netWorth){
-          document.getElementById("upvotes").value = upvotes;
-          document.getElementById("future_upvotes").value = futureUpvotes;
-          document.getElementById("netWorth").value = netWorth;
-          calculateInvestmentReturn();
-        }
-      }
-      </script>
   </body>
 </html>
